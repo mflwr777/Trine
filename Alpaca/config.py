@@ -1,8 +1,10 @@
 ### Change alpaca..id, alpaca..password,
-from pickle import NONE
-from symtable import Symbol
+import alpaca_trade_api
+import numpy as np  
+import pandas as pd
 from alpaca_trade_api.rest import REST, TimeFrame
-from matplotlib.axis import Ticker 
+from datetime import datetime
+import pathlib
 
 # Just some tickerlist - they might be refered somewhere else so be chill with editing 
 tickerlist1 = "TYG", "NTG", "SOR", "NDP", "FEI", "EMO", "NML", "IGR", "RQI", "CHY", "CHI", "CCD" #In production
@@ -86,3 +88,6 @@ dict_exchange = {'A':'NYSE American (AMEX)',
 dict_tickers = {'production':tickerlist1, 'alternative':tickerlist2,'stalker':tickerlist3}
 
 
+sub_path = str(pathlib.Path(__file__).parent.resolve())
+
+print(sub_path)
