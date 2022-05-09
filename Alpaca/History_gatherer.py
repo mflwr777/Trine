@@ -1,24 +1,6 @@
 #Hsitory gatherer
 'https://github.com/alpacahq/alpaca-trade-api-python'
-import csv
-from dataclasses import replace
-from email.quoprimime import quote
-from importlib.resources import path
-from operator import index
-from sqlite3 import Timestamp
-from xmlrpc.client import SafeTransport
-from matplotlib import container, ticker
-from matplotlib.pyplot import get
-from alpaca_trade_api import Stream
-import numpy as np  
-import pandas as pd
-import config
-from alpaca_trade_api.rest import REST, TimeFrame
-from datetime import datetime
-from importlib.resources import path
-import pathlib
-import config
-from functools import cache
+from config import *
 
 ### Non editable settings 
 np.set_printoptions(edgeitems=25, linewidth=100000)
@@ -27,7 +9,6 @@ pd.set_option('display.max_columns', 100)
 pd.set_option('display.width', 600)
 # lil' pathfinder
 sub_path = str(pathlib.Path(__file__).parent.resolve())
-
 
 #Creating authenticator 
 authenticator_iex = REST(config.alpaca_api_iex.id,config.alpaca_api_iex.password,config.alpaca_api_iex.base)
