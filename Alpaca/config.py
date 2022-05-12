@@ -6,6 +6,8 @@ from alpaca_trade_api.rest import REST, TimeFrame
 from datetime import datetime
 import pathlib
 
+
+
 # Just some tickerlist - they might be refered somewhere else so be chill with editing 
 tickerlist1 = "TYG", "NTG", "SOR", "NDP", "FEI", "EMO", "NML", "IGR", "RQI", "CHY", "CHI", "CCD" #In production
 tickerlist2 = "TYG", "NTG", "SOR"
@@ -15,10 +17,11 @@ tickerlist5 = ''
 tickerlist6 = ''
 
 # Change me if necessary 
-general_user_id = 'AKDOQNRFH36Q5UHI7J19'
-general_password = 'JBXmadGA8lE29aVBuHVO2rx8LJWN9gzzAXiC8Kdh'
+general_user_id = 'AKC7OMN00CR11U0FRLLJ'
+general_password = '4BAtSxIrpQoP05zDYCEWPeMFZDYvA7SDcKfawBTx'
 general_base = 'https://data.alpaca.markets/v2'
-general_subscription = 'sip' #for tracking iex markets -- 
+general_subscription = 'iex' #for tracking iex markets --
+premium_subscription = 'sip' 
 ENDPOINT = 'https://api.alpaca.markets' # Not sure where it is used tbh ... !
 
 
@@ -52,7 +55,7 @@ class Tickers:
 
 # Fixing Feed classes 
 alpaca_api_iex = Feeds(general_user_id,general_password,general_base,general_subscription,)
-alpaca_api_total = Feeds(general_user_id,general_password,general_base,'sip')
+alpaca_api_total = Feeds(general_user_id,general_password,general_base,premium_subscription)
 polygon_api = Feeds(None,None,None,None)
 infront_api = Feeds(None,None,None,None)
 
@@ -60,7 +63,6 @@ infront_api = Feeds(None,None,None,None)
 tickers_production = Tickers('production',tickerlist1)
 tickers_alternative = Tickers('alternative',tickerlist2)
 tickers_stalker = Tickers('stalker', tickerlist3)
-
 
 
 # Do not edit ... !! 

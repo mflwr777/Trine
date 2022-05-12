@@ -1,6 +1,7 @@
 #Hsitory gatherer
 'https://github.com/alpacahq/alpaca-trade-api-python'
-from config import *
+import config
+from config import*
 
 ### Non editable settings 
 np.set_printoptions(edgeitems=25, linewidth=100000)
@@ -16,8 +17,8 @@ authenticator_total = REST(config.alpaca_api_total.id,config.alpaca_api_total.pa
 # Spits out where you are (should be - used for writer .. )
 
 'YYYY-MM-DD'
-start_time = '2022-05-04' 
-end_time = '2022-05-04' 
+start_time = '2022-05-11' 
+end_time = '2022-05-11' 
 
 
 # Intilize tickerlist that you want to use: ticerlist_production, tickers_alternative, tickers_stalker => Check config to see what's what (or dict) 
@@ -45,12 +46,8 @@ dtf = trades_total
 
 
 reader_container_csv_iex = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) +'iex_TEST'+'.csv'
-reader_container_csv_total = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) +'totalTEST_NEWKEY'+'.csv'
+reader_container_csv_total = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) +'.csv'
 # reader_container_JSON = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) + '.JSON'
 
 experiemtal_writer_csv = dtf.to_csv(reader_container_csv_iex,index=True) #The csv writer 
 # expermiental_writer_JSON = dtf.to_json(reader_container_JSON,index=False) #JSON writer
-
-
-# print(reader_container)
-# print(sub_path_namer(inner_ref))
