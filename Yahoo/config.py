@@ -1,14 +1,14 @@
 ' Documentation: https://pypi.org/project/yfinance/'
-import imp
 import pandas as pd 
 import yfinance as yf
 import numpy as np 
 import requests 
 import lxml
-from functools import cache
 from pandas import DataFrame as df
+import pathlib
 
-import file_reader_writer as frw
+
+
 
 # Edit me if you want! 
 tickerlist1 =  ["TYG", "NTG", "SOR", "NDP", "FEI", "EMO", "NML", "IGR", "RQI", "CHY", "CHI", "CCD"]
@@ -25,5 +25,6 @@ time_period = None #Used if start_time, end_timne = None
 
 # Do not edit me please 
 yfinance_dict = {'periods':'[1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max','actions':'[info,actions,dividends,splits,financials,major_holders,institutional_holders,balance_sheet,cashflow,earnings,sustainability,recommendations,calendar,ISIN,options]'}
+
 
 

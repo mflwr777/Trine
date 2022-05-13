@@ -1,5 +1,6 @@
 #Hsitory gatherer
 'https://github.com/alpacahq/alpaca-trade-api-python'
+from asyncore import read
 import config
 from config import*
 
@@ -10,6 +11,7 @@ pd.set_option('display.max_columns', 100)
 pd.set_option('display.width', 600)
 # lil' pathfinder
 sub_path = str(pathlib.Path(__file__).parent.resolve())
+sub_path_dropbox = str(pathlib.Path(__file__).parent.parent.parent.parent.parent.resolve())
 
 #Creating authenticator 
 authenticator_iex = REST(config.alpaca_api_iex.id,config.alpaca_api_iex.password,config.alpaca_api_iex.base)
@@ -17,8 +19,8 @@ authenticator_total = REST(config.alpaca_api_total.id,config.alpaca_api_total.pa
 # Spits out where you are (should be - used for writer .. )
 
 'YYYY-MM-DD'
-start_time = '2022-05-11' 
-end_time = '2022-05-11' 
+start_time = '2022-05-12' 
+end_time = '2022-05-12' 
 
 
 # Intilize tickerlist that you want to use: ticerlist_production, tickers_alternative, tickers_stalker => Check config to see what's what (or dict) 
@@ -47,7 +49,13 @@ dtf = trades_total
 
 reader_container_csv_iex = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) +'iex_TEST'+'.csv'
 reader_container_csv_total = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) +'.csv'
-# reader_container_JSON = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) + '.JSON'
 
-experiemtal_writer_csv = dtf.to_csv(reader_container_csv_iex,index=True) #The csv writer 
-# expermiental_writer_JSON = dtf.to_json(reader_container_JSON,index=False) #JSON writer
+reader_container_dropbox = 'C:\\Users\\march\\Dropbox\\SpekulanterUdenGrænser\\Nicolas\\Trinelise\\IEX\\production_v1_0522\\csv' + '\\' +str(active_tickers.name)+ str(start_time) +'.csv'
+# # # reader_container_JSON = sub_path + '\Historical_trades\\' + '\\' +str(active_tickers.name)+ str(start_time) + '.JSON'
+
+experiemtal_writer_csv = dtf.to_csv(reader_container_dropbox,index=True) #The csv writer 
+# # # expermiental_writer_JSON = dtf.to_json(reader_container_JSON,index=False) #JSON writer
+
+# print(sub_path)
+print(sub_path_dropbox)
+print(reader_container_dropbox)

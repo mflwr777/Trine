@@ -1,24 +1,17 @@
-import imp
-from numpy import dtype, info
-from pandas import DataFrame, period_range
-import yfinance
-import config
-import yfinance as yf
+from config import*
 from pandas import DataFrame as df
-import file_reader_writer as frw
-from functools import cache
+import file_reader as file_reader
+from file_reader import*
+import yfinance as yf
 
 
-active_tickers = yf.Tickers(frw.cef_prices) #multihandler
-# active_ticker = yf.Ticker(frw.cef_navs) #single handler
+active_tickers = yf.Tickers(file_reader.cef_navs_tickers_curated) #multihandler
+'active_ticker = yf.Ticker(frw.cef_navs) #single handler'
 
 
 
-history_gatherer = active_tickers.history(start = config.start_time, end=config.end_time)
+history_gatherer = active_tickers.history(period='max')
 # info_gatherer = active_ticker.info
 
 
-output = DataFrame(history_gatherer)
-
-
-
+output = pd.DataFrame(history_gatherer)

@@ -1,7 +1,7 @@
-#kladd 
-from multiprocessing import parent_process
-import pathlib
+import pandas as pd 
 
-path_string = str(pathlib.Path(__file__).parent.resolve()) 
+a = pd.DataFrame([1,2,3,4,5,5])
+b = a.replace(to_replace=(1,2,3),value=('x','y'))
 
-print(path_string + '')
+print(a)
+print(b)
