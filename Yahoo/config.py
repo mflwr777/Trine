@@ -19,8 +19,8 @@ single_tickerlist = ['NTG']
 single_tickerlist2 = []
 
 #'YYYY-MM-DD'
-start_time = '2022-04-14' 
-end_time = '2022-04-28'
+start_time = '2021-09-24'
+end_time = '2021-09-24'
 time_period = None #Used if start_time, end_timne = None
 
 # Do not edit me please 
