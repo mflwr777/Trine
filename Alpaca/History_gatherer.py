@@ -19,8 +19,8 @@ authenticator_total = REST(config.alpaca_api_total.id,config.alpaca_api_total.pa
 # Spits out where you are (should be - used for writer .. )
 
 'YYYY-MM-DD'
-start_time = '2022-05-12' 
-end_time = '2022-05-12' 
+start_time = '2022-05-18' 
+end_time = '2022-05-18' 
 
 
 # Intilize tickerlist that you want to use: ticerlist_production, tickers_alternative, tickers_stalker => Check config to see what's what (or dict) 

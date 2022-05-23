@@ -17,8 +17,8 @@ tickerlist5 = ''
 tickerlist6 = ''
 
 # Change me if necessary 
-general_user_id = 'AKC7OMN00CR11U0FRLLJ'
-general_password = '4BAtSxIrpQoP05zDYCEWPeMFZDYvA7SDcKfawBTx'
+general_user_id = 'AKC3FF8FNKFF2RDX1791'
+general_password = 'd7ewdcFWpESNy7J4CXWafsKY57oTuZvK01WfyOHV'
 general_base = 'https://data.alpaca.markets/v2'
 general_subscription = 'iex' #for tracking iex markets --
 premium_subscription = 'sip' 
