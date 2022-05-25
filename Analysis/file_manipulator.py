@@ -22,15 +22,26 @@ ticker_dict_m1_values = ['Close' + ticker_dict_m1_values[n] for n in range(len(t
 #Creating a new dictornary for this sub-proejct (creating disc values as pct of nav)
 ticker_dict_mod = {ticker_dict_m1_key[n]:ticker_dict_m1_values[n] for n in range(len(ticker_dict_m1_key))}
 
+csv_reader = pd.read_csv(r'C:\\Users\\march\\Dropbox\\SelandiaCapital\\Nicolas\\Trinelise\\Analysis_supplement\\cef_price_nav20220520_mod1.csv',low_memory=False)
+df = pd.DataFrame(csv_reader)
+
+print(df['CloseAFT'].isna().sum())
+print(df['CloseADX'].isna().sum())
+
+### Not wasting time on this - manually removing the dates from the CSV file ...###
+
+
+
+
 'Saved a pkl object, no need to reruncode below ...!  pkl file sucks anyways so fuck it '
 # csv_reads = pd.DataFrame(pd.read_csv(sub_path + '\\cef_price_nav20220520_mod1.csv',low_memory=False))
 # csv_reads.to_pickle('cef_price_nav_mod1.pkl') 
 
-#Fuck this shit nigger....! Save as csv and fuck offfffffff..........................Also clean this mafaakkafile 
-df = pd.DataFrame(pd.read_csv(parent_path + '\\Dropbox\\SpekulanterUdenGrænser\\Nicolas\\Trinelise\\Analysis_supplement\\cef_price_nav_mod1.pkl'))
-pd.DataFrame(pd.read_pickle(parent_path + '\\Dropbox\\SpekulanterUdenGrænser\\Nicolas\\Trinelise\\Analysis_supplement\\cef_price_nav_mod1.pkl' )) #current dataframe ..! Noncut
-df_sub = (df.iloc[10124:, 1:]).astype(np.float32) #Shorten it to start 5/mai/2022
-print(df_sub['CloseASGI'])
+# #Fuck this shit nigger....! Save as csv and fuck offfffffff..........................Also clean this mafaakkafile 
+# df = pd.DataFrame(pd.read_csv(parent_path + '\\Dropbox\\SpekulanterUdenGrænser\\Nicolas\\Trinelise\\Analysis_supplement\\cef_price_nav_mod1.pkl'))
+# pd.DataFrame(pd.read_pickle(parent_path + '\\Dropbox\\SpekulanterUdenGrænser\\Nicolas\\Trinelise\\Analysis_supplement\\cef_price_nav_mod1.pkl' )) #current dataframe ..! Noncut
+# df_sub = (df.iloc[10124:, 1:]).astype(np.float32) #Shorten it to start 5/mai/2022
+# print(df_sub['CloseASGI'])
 
 ''' Solution is to NOT pickle that shit up - but whatever carrying on => '''
 # df = df.astype(np.float32)
